@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yzm-Bu-b1l">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DynmDrawDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tu-DT-nP7">
+                                <rect key="frame" x="103.5" y="423.5" width="207" height="103.5"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.70980392160000005" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0tu-DT-nP7" secondAttribute="height" multiplier="2" id="AOK-8Q-9pT"/>
+                                </constraints>
+                                <state key="normal" title="enter"/>
+                                <connections>
+                                    <segue destination="eOo-o8-ly9" kind="show" id="QDe-U0-Tav"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0tu-DT-nP7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Udv-aP-HkG"/>
+                            <constraint firstItem="0tu-DT-nP7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Ylu-P6-6P9"/>
+                            <constraint firstItem="0tu-DT-nP7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="y7j-FY-mV7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uIF-EF-B8n"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
+        </scene>
+        <!--Demo View Controller-->
+        <scene sceneID="ncv-xZ-Anb">
+            <objects>
+                <viewController storyboardIdentifier="DemoViewController" id="eOo-o8-ly9" customClass="DemoViewController" customModule="DynmDrawDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iQU-xR-FBC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVL-FL-f9O" userLabel="view">
+                                <rect key="frame" x="0.0" y="88" width="414" height="694"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvD-D3-eYV" userLabel="dynamicBox" customClass="Box" customModule="DynmDrawDemo" customModuleProvider="target">
+                                        <rect key="frame" x="182" y="322" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="zvD-D3-eYV" secondAttribute="height" id="ezP-AI-i3c"/>
+                                            <constraint firstAttribute="width" constant="50" id="pEW-VO-8Fs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="zvD-D3-eYV" firstAttribute="centerY" secondItem="wVL-FL-f9O" secondAttribute="centerY" id="CaW-CX-d7H"/>
+                                    <constraint firstItem="zvD-D3-eYV" firstAttribute="centerX" secondItem="wVL-FL-f9O" secondAttribute="centerX" id="qhm-8a-byt"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0w-OL-JLb" userLabel="bar">
+                                <rect key="frame" x="0.0" y="782" width="414" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1WH-ri-0Kw">
+                                        <rect key="frame" x="8" y="8" width="398" height="64"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6p-Ee-Acd" userLabel="rectangleView">
+                                                <rect key="frame" x="0.0" y="0.0" width="127.5" height="64"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ju4-GE-BA5" userLabel="rectangleBox" customClass="Box" customModule="DynmDrawDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="39.5" y="8" width="48" height="48"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD6-5P-dSx" userLabel="btnRectangle">
+                                                        <rect key="frame" x="39.5" y="8" width="48" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="pD6-5P-dSx" secondAttribute="height" id="Hn4-b0-jln"/>
+                                                        </constraints>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="pD6-5P-dSx" firstAttribute="centerX" secondItem="W6p-Ee-Acd" secondAttribute="centerX" id="7Pw-I3-ukx"/>
+                                                    <constraint firstItem="pD6-5P-dSx" firstAttribute="centerY" secondItem="W6p-Ee-Acd" secondAttribute="centerY" id="Cmj-Ck-NyY"/>
+                                                    <constraint firstItem="pD6-5P-dSx" firstAttribute="top" secondItem="W6p-Ee-Acd" secondAttribute="topMargin" id="IcC-na-a0q"/>
+                                                    <constraint firstItem="ju4-GE-BA5" firstAttribute="top" secondItem="pD6-5P-dSx" secondAttribute="top" id="bcV-PY-TV7"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="pD6-5P-dSx" secondAttribute="bottom" id="e5T-NS-rd4"/>
+                                                    <constraint firstItem="ju4-GE-BA5" firstAttribute="leading" secondItem="pD6-5P-dSx" secondAttribute="leading" id="gMG-pc-Ol9"/>
+                                                    <constraint firstItem="ju4-GE-BA5" firstAttribute="bottom" secondItem="pD6-5P-dSx" secondAttribute="bottom" id="i7f-gT-Nsq"/>
+                                                    <constraint firstItem="ju4-GE-BA5" firstAttribute="trailing" secondItem="pD6-5P-dSx" secondAttribute="trailing" id="q9M-iR-9Hj"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VA2-CH-YlA" userLabel="circleView">
+                                                <rect key="frame" x="135.5" y="0.0" width="127" height="64"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gym-sI-ayA" userLabel="circleBox" customClass="Box" customModule="DynmDrawDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="39.5" y="8" width="48" height="48"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg8-Mh-Tcs" userLabel="btnCircle">
+                                                        <rect key="frame" x="39.5" y="8" width="48" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="cg8-Mh-Tcs" secondAttribute="height" id="7ca-CM-Ejk"/>
+                                                        </constraints>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="cg8-Mh-Tcs" firstAttribute="top" secondItem="VA2-CH-YlA" secondAttribute="topMargin" id="5ND-PU-jbE"/>
+                                                    <constraint firstItem="Gym-sI-ayA" firstAttribute="top" secondItem="cg8-Mh-Tcs" secondAttribute="top" id="GPz-7c-oD7"/>
+                                                    <constraint firstItem="Gym-sI-ayA" firstAttribute="bottom" secondItem="cg8-Mh-Tcs" secondAttribute="bottom" id="GdP-RP-6Rl"/>
+                                                    <constraint firstItem="Gym-sI-ayA" firstAttribute="trailing" secondItem="cg8-Mh-Tcs" secondAttribute="trailing" id="OVK-Ce-ZzH"/>
+                                                    <constraint firstItem="cg8-Mh-Tcs" firstAttribute="centerX" secondItem="VA2-CH-YlA" secondAttribute="centerX" id="djX-zh-hfK"/>
+                                                    <constraint firstItem="cg8-Mh-Tcs" firstAttribute="centerY" secondItem="VA2-CH-YlA" secondAttribute="centerY" id="hPW-d0-6VW"/>
+                                                    <constraint firstItem="Gym-sI-ayA" firstAttribute="leading" secondItem="cg8-Mh-Tcs" secondAttribute="leading" id="oEu-2p-eEL"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="cg8-Mh-Tcs" secondAttribute="bottom" id="zXA-Eb-4NO"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agH-7i-Uak" userLabel="triangleView">
+                                                <rect key="frame" x="270.5" y="0.0" width="127.5" height="64"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygJ-Bs-vwn" userLabel="triangleBox" customClass="Box" customModule="DynmDrawDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="40" y="8" width="48" height="48"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXA-BF-vAC" userLabel="btnTriangle">
+                                                        <rect key="frame" x="40" y="8" width="48" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="mXA-BF-vAC" secondAttribute="height" id="DEf-CP-Mjc"/>
+                                                        </constraints>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="mXA-BF-vAC" firstAttribute="centerX" secondItem="agH-7i-Uak" secondAttribute="centerX" id="2QG-tX-DtQ"/>
+                                                    <constraint firstItem="ygJ-Bs-vwn" firstAttribute="bottom" secondItem="mXA-BF-vAC" secondAttribute="bottom" id="8P9-58-dgH"/>
+                                                    <constraint firstItem="mXA-BF-vAC" firstAttribute="centerY" secondItem="agH-7i-Uak" secondAttribute="centerY" id="Mo2-hD-1jv"/>
+                                                    <constraint firstItem="ygJ-Bs-vwn" firstAttribute="top" secondItem="mXA-BF-vAC" secondAttribute="top" id="YP5-EE-vJp"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="mXA-BF-vAC" secondAttribute="bottom" id="hfk-k0-IJw"/>
+                                                    <constraint firstItem="ygJ-Bs-vwn" firstAttribute="leading" secondItem="mXA-BF-vAC" secondAttribute="leading" id="mUy-4l-uW2"/>
+                                                    <constraint firstItem="mXA-BF-vAC" firstAttribute="top" secondItem="agH-7i-Uak" secondAttribute="topMargin" id="vcs-vG-KqA"/>
+                                                    <constraint firstItem="ygJ-Bs-vwn" firstAttribute="trailing" secondItem="mXA-BF-vAC" secondAttribute="trailing" id="ytd-a4-lTZ"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.49019607840000001" green="0.71372549019999998" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="1WH-ri-0Kw" secondAttribute="bottom" id="CWQ-Jw-CZx"/>
+                                    <constraint firstItem="1WH-ri-0Kw" firstAttribute="top" secondItem="V0w-OL-JLb" secondAttribute="topMargin" id="ZCR-xj-r8d"/>
+                                    <constraint firstItem="1WH-ri-0Kw" firstAttribute="leading" secondItem="V0w-OL-JLb" secondAttribute="leadingMargin" id="fms-yl-72o"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="1WH-ri-0Kw" secondAttribute="trailing" id="jPJ-1F-PIA"/>
+                                    <constraint firstAttribute="height" constant="80" id="zmU-MA-4wn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jhx-1O-fX2" firstAttribute="trailing" secondItem="V0w-OL-JLb" secondAttribute="trailing" id="2vX-8L-Dmd"/>
+                            <constraint firstItem="wVL-FL-f9O" firstAttribute="trailing" secondItem="jhx-1O-fX2" secondAttribute="trailing" id="4LS-z8-mUJ"/>
+                            <constraint firstItem="V0w-OL-JLb" firstAttribute="leading" secondItem="jhx-1O-fX2" secondAttribute="leading" id="Cej-ek-AUV"/>
+                            <constraint firstItem="wVL-FL-f9O" firstAttribute="bottom" secondItem="V0w-OL-JLb" secondAttribute="top" id="JcS-qM-4P2"/>
+                            <constraint firstItem="wVL-FL-f9O" firstAttribute="top" secondItem="jhx-1O-fX2" secondAttribute="top" id="UcF-MG-8Wg"/>
+                            <constraint firstItem="jhx-1O-fX2" firstAttribute="bottom" secondItem="V0w-OL-JLb" secondAttribute="bottom" id="Xkm-94-8Je"/>
+                            <constraint firstItem="wVL-FL-f9O" firstAttribute="leading" secondItem="jhx-1O-fX2" secondAttribute="leading" id="c96-ca-Maa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jhx-1O-fX2"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnCircle" destination="cg8-Mh-Tcs" id="RBY-6B-FAZ"/>
+                        <outlet property="btnRectangle" destination="pD6-5P-dSx" id="Ynm-QI-SVg"/>
+                        <outlet property="btnTriangle" destination="mXA-BF-vAC" id="O3j-CV-N1W"/>
+                        <outlet property="circleBox" destination="Gym-sI-ayA" id="MIR-TN-fgt"/>
+                        <outlet property="dynamicBox" destination="zvD-D3-eYV" id="C6A-vy-hxt"/>
+                        <outlet property="rectangleBox" destination="ju4-GE-BA5" id="28e-ih-hyR"/>
+                        <outlet property="triangleBox" destination="ygJ-Bs-vwn" id="Pkt-JW-hrq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UgG-P2-dvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="30"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ri4-hK-fcl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="yzm-Bu-b1l" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bpR-lo-Xnk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lUc-TA-w5h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hs2-QV-tpy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="21"/>
+        </scene>
+    </scenes>
+</document>
