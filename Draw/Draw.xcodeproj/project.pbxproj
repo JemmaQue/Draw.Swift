@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,8 +15,6 @@
 		BF7F47FC2398EBB700000C52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7F47FB2398EBB700000C52 /* Assets.xcassets */; };
 		BF7F47FF2398EBB700000C52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7F47FD2398EBB700000C52 /* LaunchScreen.storyboard */; };
 		BF7F48082398EC6100000C52 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F48062398EC6100000C52 /* DemoViewController.swift */; };
-		BF7F48092398EC6100000C52 /* LoginViewcontrollerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F48072398EC6100000C52 /* LoginViewcontrollerViewController.swift */; };
-		BF7F480F2398EC6F00000C52 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F480B2398EC6F00000C52 /* UIButtonExtension.swift */; };
 		BF7F48102398EC6F00000C52 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F480C2398EC6F00000C52 /* UIColorExtension.swift */; };
 		BF7F48112398EC6F00000C52 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F480D2398EC6F00000C52 /* UIViewExtension.swift */; };
 		BF7F48122398EC6F00000C52 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F480E2398EC6F00000C52 /* Box.swift */; };
@@ -35,8 +33,6 @@
 		BF7F47FE2398EBB700000C52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF7F48002398EBB700000C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF7F48062398EC6100000C52 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
-		BF7F48072398EC6100000C52 /* LoginViewcontrollerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewcontrollerViewController.swift; sourceTree = "<group>"; };
-		BF7F480B2398EC6F00000C52 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		BF7F480C2398EC6F00000C52 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		BF7F480D2398EC6F00000C52 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		BF7F480E2398EC6F00000C52 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -60,7 +56,6 @@
 				1485BB6674D25CE963F00DB0 /* Pods-Draw.debug.xcconfig */,
 				9E1C84DBAA1B7F87238B5819 /* Pods-Draw.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,7 +82,6 @@
 			children = (
 				BF7F480A2398EC6F00000C52 /* CustomizedView */,
 				BF7F48062398EC6100000C52 /* DemoViewController.swift */,
-				BF7F48072398EC6100000C52 /* LoginViewcontrollerViewController.swift */,
 				BF7F47F22398EBB400000C52 /* AppDelegate.swift */,
 				BF7F47F42398EBB400000C52 /* SceneDelegate.swift */,
 				BF7F47F62398EBB400000C52 /* ViewController.swift */,
@@ -102,7 +96,6 @@
 		BF7F480A2398EC6F00000C52 /* CustomizedView */ = {
 			isa = PBXGroup;
 			children = (
-				BF7F480B2398EC6F00000C52 /* UIButtonExtension.swift */,
 				BF7F480C2398EC6F00000C52 /* UIColorExtension.swift */,
 				BF7F480D2398EC6F00000C52 /* UIViewExtension.swift */,
 				BF7F480E2398EC6F00000C52 /* Box.swift */,
@@ -236,12 +229,10 @@
 				BF7F48122398EC6F00000C52 /* Box.swift in Sources */,
 				BF7F47F72398EBB400000C52 /* ViewController.swift in Sources */,
 				BF7F48102398EC6F00000C52 /* UIColorExtension.swift in Sources */,
-				BF7F48092398EC6100000C52 /* LoginViewcontrollerViewController.swift in Sources */,
 				BF7F47F32398EBB400000C52 /* AppDelegate.swift in Sources */,
 				BF7F47F52398EBB400000C52 /* SceneDelegate.swift in Sources */,
 				BF7F48082398EC6100000C52 /* DemoViewController.swift in Sources */,
 				BF7F48112398EC6F00000C52 /* UIViewExtension.swift in Sources */,
-				BF7F480F2398EC6F00000C52 /* UIButtonExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
