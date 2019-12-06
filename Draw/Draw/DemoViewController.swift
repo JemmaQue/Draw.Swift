@@ -71,8 +71,8 @@ extension DemoViewController {
     func start() {
         self.btnMove.isSelected = true
         repeatTimer =
-            Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [unowned self] _ in
-                self.move()
+            Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [weak self] _ in
+                self?.move()
         })
     }
     
