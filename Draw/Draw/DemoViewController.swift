@@ -20,6 +20,7 @@ class DemoViewController: UIViewController {
     @IBOutlet weak var btnRectangle: UIButton!
     @IBOutlet weak var btnCircle: UIButton!
     @IBOutlet weak var btnTriangle: UIButton!
+    @IBOutlet weak var moveButton: UIButton!
     var repeatTimer: Timer?
     var moveX: CGFloat?
     var moveY: CGFloat?
@@ -47,16 +48,28 @@ class DemoViewController: UIViewController {
             self.dynamicBox.boxShape = .triangle
         }).disposed(by: disposeBag)
         
+        moveButton.layer.cornerRadius = 5.0
+        moveButton.backgroundColor = btnColor
+        moveButton.setTitle("start", for: .normal)
+        moveButton.setTitle("stop", for: .selected)
         let theta: Double = Double.random(in: 15...30)
         moveX = CGFloat(cos(theta * Double.pi / 180))
         moveY = CGFloat(sin(theta * Double.pi / 180))
-        start()
+        moveButton.rx.tap.subscribe(onNext: { [unowned self] _ in
+            if self.moveButton.isSelected {
+                self.stop()
+            } else {
+                self.start()
+            }
+        }).disposed(by: disposeBag)
+        
     }
 
 }
 
 extension DemoViewController {
     func start() {
+        self.moveButton.isSelected = true
         repeatTimer =
             Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [unowned self] _ in
                 self.move()
@@ -67,6 +80,7 @@ extension DemoViewController {
         guard let x = moveX, let y = moveY else {
             return
         }
+        
         if (dynamicBox.frame.maxX + x > rangeView.bounds.maxX){
             self.moveX = x * -1
         }
@@ -95,6 +109,7 @@ extension DemoViewController {
     }
     
     func stop() {
+        self.moveButton.isSelected = false
         repeatTimer?.invalidate()
     }
     

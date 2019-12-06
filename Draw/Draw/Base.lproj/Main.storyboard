@@ -74,14 +74,14 @@
                                         <rect key="frame" x="8" y="8" width="398" height="64"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6p-Ee-Acd" userLabel="rectangleView">
-                                                <rect key="frame" x="0.0" y="0.0" width="127.5" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="64"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ju4-GE-BA5" userLabel="rectangleBox" customClass="Box" customModule="Draw" customModuleProvider="target">
-                                                        <rect key="frame" x="39.5" y="8" width="48" height="48"/>
+                                                        <rect key="frame" x="23" y="8" width="48" height="48"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD6-5P-dSx" userLabel="btnRectangle">
-                                                        <rect key="frame" x="39.5" y="8" width="48" height="48"/>
+                                                        <rect key="frame" x="23" y="8" width="48" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="pD6-5P-dSx" secondAttribute="height" id="Hn4-b0-jln"/>
                                                         </constraints>
@@ -100,14 +100,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VA2-CH-YlA" userLabel="circleView">
-                                                <rect key="frame" x="135.5" y="0.0" width="127" height="64"/>
+                                                <rect key="frame" x="101.5" y="0.0" width="93.5" height="64"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gym-sI-ayA" userLabel="circleBox" customClass="Box" customModule="Draw" customModuleProvider="target">
-                                                        <rect key="frame" x="39.5" y="8" width="48" height="48"/>
+                                                        <rect key="frame" x="23" y="8" width="48" height="48"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg8-Mh-Tcs" userLabel="btnCircle">
-                                                        <rect key="frame" x="39.5" y="8" width="48" height="48"/>
+                                                        <rect key="frame" x="23" y="8" width="48" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="cg8-Mh-Tcs" secondAttribute="height" id="7ca-CM-Ejk"/>
                                                         </constraints>
@@ -126,14 +126,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agH-7i-Uak" userLabel="triangleView">
-                                                <rect key="frame" x="270.5" y="0.0" width="127.5" height="64"/>
+                                                <rect key="frame" x="203" y="0.0" width="93.5" height="64"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygJ-Bs-vwn" userLabel="triangleBox" customClass="Box" customModule="Draw" customModuleProvider="target">
-                                                        <rect key="frame" x="40" y="8" width="48" height="48"/>
+                                                        <rect key="frame" x="23" y="8" width="48" height="48"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXA-BF-vAC" userLabel="btnTriangle">
-                                                        <rect key="frame" x="40" y="8" width="48" height="48"/>
+                                                        <rect key="frame" x="23" y="8" width="48" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="mXA-BF-vAC" secondAttribute="height" id="DEf-CP-Mjc"/>
                                                         </constraints>
@@ -149,6 +149,26 @@
                                                     <constraint firstItem="ygJ-Bs-vwn" firstAttribute="leading" secondItem="mXA-BF-vAC" secondAttribute="leading" id="mUy-4l-uW2"/>
                                                     <constraint firstItem="mXA-BF-vAC" firstAttribute="top" secondItem="agH-7i-Uak" secondAttribute="topMargin" id="vcs-vG-KqA"/>
                                                     <constraint firstItem="ygJ-Bs-vwn" firstAttribute="trailing" secondItem="mXA-BF-vAC" secondAttribute="trailing" id="ytd-a4-lTZ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-6l-4xl" userLabel="doneView">
+                                                <rect key="frame" x="304.5" y="0.0" width="93.5" height="64"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpx-B7-ALq" userLabel="doneButton">
+                                                        <rect key="frame" x="24" y="9" width="46" height="46"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Dpx-B7-ALq" secondAttribute="height" multiplier="1:1" id="xt8-zp-HxB"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Dpx-B7-ALq" firstAttribute="centerX" secondItem="P7f-6l-4xl" secondAttribute="centerX" id="7Cp-sH-a0q"/>
+                                                    <constraint firstItem="Dpx-B7-ALq" firstAttribute="centerY" secondItem="P7f-6l-4xl" secondAttribute="centerY" id="Bnb-dK-4Ns"/>
+                                                    <constraint firstItem="Dpx-B7-ALq" firstAttribute="height" secondItem="P7f-6l-4xl" secondAttribute="height" multiplier="0.71875" id="L59-50-4yF"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -182,6 +202,7 @@
                         <outlet property="btnTriangle" destination="mXA-BF-vAC" id="O3j-CV-N1W"/>
                         <outlet property="circleBox" destination="Gym-sI-ayA" id="MIR-TN-fgt"/>
                         <outlet property="dynamicBox" destination="zvD-D3-eYV" id="C6A-vy-hxt"/>
+                        <outlet property="moveButton" destination="Dpx-B7-ALq" id="YS8-kP-PUz"/>
                         <outlet property="rangeView" destination="wVL-FL-f9O" id="tR4-EL-QQa"/>
                         <outlet property="rectangleBox" destination="ju4-GE-BA5" id="28e-ih-hyR"/>
                         <outlet property="triangleBox" destination="ygJ-Bs-vwn" id="Pkt-JW-hrq"/>
