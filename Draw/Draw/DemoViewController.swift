@@ -48,8 +48,8 @@ class DemoViewController: UIViewController {
         }).disposed(by: disposeBag)
         
         let theta: Double = Double.random(in: 15...30)
-        moveX = CGFloat(cos(theta * M_PI / 180))
-        moveY = CGFloat(sin(theta * M_PI / 180))
+        moveX = CGFloat(cos(theta * Double.pi / 180))
+        moveY = CGFloat(sin(theta * Double.pi / 180))
         start()
     }
 
@@ -58,34 +58,40 @@ class DemoViewController: UIViewController {
 extension DemoViewController {
     func start() {
         repeatTimer =
-            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [unowned self] _ in
+            Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [unowned self] _ in
                 self.move()
         })
     }
     
     func move() {
-        guard let moveX = moveX, let moveY = moveY else {
+        guard let x = moveX, let y = moveY else {
             return
         }
-        if (dynamicBox.frame.maxX + moveX > rangeView.frame.maxX){
-            self.moveX = moveX * -1;
+        if (dynamicBox.frame.maxX + x > rangeView.bounds.maxX){
+            self.moveX = x * -1
         }
         
-        if (dynamicBox.frame.maxY + moveY > rangeView.frame.maxY){
-            self.moveY = moveY * -1;
+        if (dynamicBox.frame.maxY + y > rangeView.bounds.maxY){
+            self.moveY = y * -1
         }
         
-        if (dynamicBox.frame.minX + moveX < rangeView.frame.minX){
-            self.moveX = moveX * -1;
+        if (dynamicBox.frame.minX + x < rangeView.bounds.minX){
+            self.moveX = x * -1
         }
         
-        if (dynamicBox.frame.minY + moveY < rangeView.frame.minY){
-            self.moveY = moveY * -1;
+        if (dynamicBox.frame.minY + y < rangeView.bounds.minY){
+            self.moveY = y * -1
         }
         
-        dynamicBox.frame = CGRect(x: dynamicBox.frame.origin.x + moveX,
-                                  y: dynamicBox.frame.origin.y + moveY,
-                                  width: dynamicBox.frame.size.width, height: dynamicBox.frame.size.height);
+        UIView.animate(withDuration: 0.01, animations: {
+            guard let x = self.moveX, let y = self.moveY else {
+                return
+            }
+            self.dynamicBox.frame = CGRect(x:self.dynamicBox.frame.origin.x + x,
+            y: self.dynamicBox.frame.origin.y + y,
+            width: self.dynamicBox.frame.size.width, height: self.dynamicBox.frame.size.height);
+        })
+        
     }
     
     func stop() {
