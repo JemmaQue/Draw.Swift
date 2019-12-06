@@ -198,11 +198,11 @@
                     </view>
                     <connections>
                         <outlet property="btnCircle" destination="cg8-Mh-Tcs" id="RBY-6B-FAZ"/>
+                        <outlet property="btnMove" destination="Dpx-B7-ALq" id="G0o-ib-Yls"/>
                         <outlet property="btnRectangle" destination="pD6-5P-dSx" id="Ynm-QI-SVg"/>
                         <outlet property="btnTriangle" destination="mXA-BF-vAC" id="O3j-CV-N1W"/>
                         <outlet property="circleBox" destination="Gym-sI-ayA" id="MIR-TN-fgt"/>
                         <outlet property="dynamicBox" destination="zvD-D3-eYV" id="C6A-vy-hxt"/>
-                        <outlet property="moveButton" destination="Dpx-B7-ALq" id="YS8-kP-PUz"/>
                         <outlet property="rangeView" destination="wVL-FL-f9O" id="tR4-EL-QQa"/>
                         <outlet property="rectangleBox" destination="ju4-GE-BA5" id="28e-ih-hyR"/>
                         <outlet property="triangleBox" destination="ygJ-Bs-vwn" id="Pkt-JW-hrq"/>
