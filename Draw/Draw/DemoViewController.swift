@@ -20,24 +20,23 @@ class DemoViewController: UIViewController {
     @IBOutlet weak var btnRectangle: UIButton!
     @IBOutlet weak var btnCircle: UIButton!
     @IBOutlet weak var btnTriangle: UIButton!
-    @IBOutlet weak var moveButton: UIButton!
+    @IBOutlet weak var btnMove: UIButton!
+    let btnColor:UIColor = UIColor().colorWithHexString("#FA6A7B")
+    var disposeBag = DisposeBag()
     var repeatTimer: Timer?
     var moveX: CGFloat?
     var moveY: CGFloat?
     
-    var disposeBag = DisposeBag()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialized()
+        animate()
     }
     
     private func initialized() {
-        let btnColor:UIColor = UIColor().colorWithHexString("#FA6A7B")
         rectangleBox.setBoxShape(.rectangle, fillColor: btnColor)
         circleBox.setBoxShape(.circle, fillColor: btnColor)
         triangleBox.setBoxShape(.triangle, fillColor: btnColor)
-        
         btnRectangle.rx.tap.subscribe(onNext: { [unowned self] _ in
             self.dynamicBox.boxShape = .rectangle
         }).disposed(by: disposeBag)
@@ -47,29 +46,30 @@ class DemoViewController: UIViewController {
         btnTriangle.rx.tap.subscribe(onNext: { [unowned self] _ in
             self.dynamicBox.boxShape = .triangle
         }).disposed(by: disposeBag)
-        
-        moveButton.layer.cornerRadius = 5.0
-        moveButton.backgroundColor = btnColor
-        moveButton.setTitle("start", for: .normal)
-        moveButton.setTitle("stop", for: .selected)
+    }
+    
+    private func animate() {
+        btnMove.layer.cornerRadius = 5.0
+        btnMove.backgroundColor = btnColor
+        btnMove.setTitle("start", for: .normal)
+        btnMove.setTitle("stop", for: .selected)
         let theta: Double = Double.random(in: 15...30)
         moveX = CGFloat(cos(theta * Double.pi / 180))
         moveY = CGFloat(sin(theta * Double.pi / 180))
-        moveButton.rx.tap.subscribe(onNext: { [unowned self] _ in
-            if self.moveButton.isSelected {
+        btnMove.rx.tap.subscribe(onNext: { [unowned self] _ in
+            if self.btnMove.isSelected {
                 self.stop()
             } else {
                 self.start()
             }
         }).disposed(by: disposeBag)
-        
     }
-
+    
 }
 
 extension DemoViewController {
     func start() {
-        self.moveButton.isSelected = true
+        self.btnMove.isSelected = true
         repeatTimer =
             Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [unowned self] _ in
                 self.move()
@@ -109,7 +109,7 @@ extension DemoViewController {
     }
     
     func stop() {
-        self.moveButton.isSelected = false
+        self.btnMove.isSelected = false
         repeatTimer?.invalidate()
     }
     
