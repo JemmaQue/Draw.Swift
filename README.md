@@ -16,4 +16,4 @@ UIBezierPath
 UIGraphicsGetCurrentContext
 ```
 version 1.0: 
-![image](https://github.com/JemmaQue/Draw.swift/blob/master/%20t.gif)
+![image](https://github.com/JemmaQue/Draw.swift/blob/release/1.0/1.0.gif)
