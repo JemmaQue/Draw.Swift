@@ -15,9 +15,9 @@ CAShapeLayer
 UIBezierPath
 UIGraphicsGetCurrentContext
 ```
-version 1.0: 
-![image](https://github.com/JemmaQue/Draw.swift/blob/master/%20t.gif)
+![image](https://github.com/JemmaQue/Draw.swift/blob/master/1.0.gif)
 
 使用UIView.animate＆Timer實現Box移動
-version 2.0: 
+
+![image](https://github.com/JemmaQue/Draw.swift/blob/master/2.0.gif)
 
