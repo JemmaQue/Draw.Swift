@@ -74,7 +74,7 @@ extension DemoViewController {
         collision.addBoundary(withIdentifier: "rangeView" as NSCopying, for: UIBezierPath(rect: rangeView.bounds))
         animator.addBehavior(collision)
         let push = UIPushBehavior(items: [dynamicBox], mode: .instantaneous)
-        push.magnitude = 20.0
+        push.magnitude = 30.0
         push.addItem(dynamicBox)
         animator.addBehavior(push)
     }
