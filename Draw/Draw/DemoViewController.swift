@@ -23,14 +23,12 @@ class DemoViewController: UIViewController {
     @IBOutlet weak var btnMove: UIButton!
     let btnColor:UIColor = UIColor().colorWithHexString("#FA6A7B")
     var disposeBag = DisposeBag()
-    var repeatTimer: Timer?
-    var moveX: CGFloat?
-    var moveY: CGFloat?
+    var animator: UIDynamicAnimator!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialized()
-        animate()
+        dynamic()
     }
     
     private func initialized() {
@@ -48,14 +46,11 @@ class DemoViewController: UIViewController {
         }).disposed(by: disposeBag)
     }
     
-    private func animate() {
+    private func dynamic() {
         btnMove.layer.cornerRadius = 5.0
         btnMove.backgroundColor = btnColor
         btnMove.setTitle("start", for: .normal)
         btnMove.setTitle("stop", for: .selected)
-        let theta: Double = Double.random(in: 15...30)
-        moveX = CGFloat(cos(theta * Double.pi / 180))
-        moveY = CGFloat(sin(theta * Double.pi / 180))
         btnMove.rx.tap.subscribe(onNext: { [unowned self] _ in
             if self.btnMove.isSelected {
                 self.stop()
@@ -69,48 +64,23 @@ class DemoViewController: UIViewController {
 
 extension DemoViewController {
     func start() {
-        self.btnMove.isSelected = true
-        repeatTimer =
-            Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [weak self] _ in
-                self?.move()
-        })
-    }
-    
-    func move() {
-        guard let x = moveX, let y = moveY else {
-            return
-        }
-        
-        if (dynamicBox.frame.maxX + x > rangeView.bounds.maxX){
-            self.moveX = x * -1
-        }
-        
-        if (dynamicBox.frame.maxY + y > rangeView.bounds.maxY){
-            self.moveY = y * -1
-        }
-        
-        if (dynamicBox.frame.minX + x < rangeView.bounds.minX){
-            self.moveX = x * -1
-        }
-        
-        if (dynamicBox.frame.minY + y < rangeView.bounds.minY){
-            self.moveY = y * -1
-        }
-        
-        UIView.animate(withDuration: 0.01, animations: {
-            guard let x = self.moveX, let y = self.moveY else {
-                return
-            }
-            self.dynamicBox.frame = CGRect(x:self.dynamicBox.frame.origin.x + x,
-            y: self.dynamicBox.frame.origin.y + y,
-            width: self.dynamicBox.frame.size.width, height: self.dynamicBox.frame.size.height);
-        })
-        
+        btnMove.isSelected = true
+        animator = UIDynamicAnimator(referenceView: rangeView)
+        let gravity = UIGravityBehavior()
+        gravity.addItem(dynamicBox)
+        animator.addBehavior(gravity)
+        let collision = UICollisionBehavior()
+        collision.addItem(dynamicBox)
+        collision.addBoundary(withIdentifier: "rangeView" as NSCopying, for: UIBezierPath(rect: rangeView.bounds))
+        animator.addBehavior(collision)
+        let push = UIPushBehavior(items: [dynamicBox], mode: .instantaneous)
+        push.magnitude = 20.0
+        push.addItem(dynamicBox)
+        animator.addBehavior(push)
     }
     
     func stop() {
-        self.btnMove.isSelected = false
-        repeatTimer?.invalidate()
+        btnMove.isSelected = false
+        animator.removeAllBehaviors()
     }
-    
 }
