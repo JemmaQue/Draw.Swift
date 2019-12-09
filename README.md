@@ -22,4 +22,6 @@ UIGraphicsGetCurrentContext
 
 ![image](https://github.com/JemmaQue/Draw.swift/blob/master/2.0.gif)
 
+使用UIDynamicAnimator實現 地心引力＆碰撞
 
+![image](https://github.com/JemmaQue/Draw.swift/blob/master/%203.0.gif)
